@@ -15,18 +15,4 @@ exports.watcher = () => {
             .on('change', ts.change);
     }
 
-    // Pug -> HTML
-    if (wdsOpt.pug.use) {
-        const pug = require("./pug");
-        watch("app/**/*.pug")
-            .on('change', pug.change);
-    }
-
-    // Stylus -> CSS
-    if (wdsOpt.styl.use) {
-        const styl = require("./styl");
-        watch("app/**/*.styl")
-            .on('change', styl.change);
-    }
-
 };

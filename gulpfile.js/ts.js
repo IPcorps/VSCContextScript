@@ -24,7 +24,10 @@ exports.change = path => {
         .pipe(gulpif(wdsOpt.extjs, gulprename({ extname: wdsOpt.extjs })))                  // Output file extension
         .pipe(gulpif(!!wdsOpt.dirFrom, gulprename(                                          // Checking and setting the path
             dir => dir.dirname = dir.dirname.replace(wdsOpt.dirFrom, wdsOpt.dirTo))))
-        .pipe(dest('.'));                                                                   // Saving the file
+        .pipe(dest('.'))                                                                    // Saving the file
+        .on('end', () => {                                                                  // Updating the debugger
+            // console.log('end')
+        });
 
     // To see something happen
     console.log('\x1b[36m%s\x1b[0m', path, 'processed');

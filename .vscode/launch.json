@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Ext-test",
+            "request": "launch",
+            "type": "pwa-extensionHost",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}/app/out"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run files watcher",
+			"type": "npm",
+			"script": "rfw",
+			"problemMatcher": [],
+			"presentation": {
+				"group": "dev"
+			}
+		}
+	]
+}

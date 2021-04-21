@@ -1,0 +1,40 @@
+{
+  "name": "vsccontextscript",
+  "displayName": "VSC Context Script",
+  "version": "1.0.0",
+  "description": "🌀 Visual Studio Code (VSC) extension for running a script in the context of the VSC itself.",
+  "icon": "128_258.png",
+  "galleryBanner": {
+    "color": "#00ffff",
+    "theme": "dark"
+  },
+  "author": "IPcorp",
+  "publisher": "IPcorp",
+  "license": "SEE LICENSE IN LICENSE",
+  "categories": [
+    "Debuggers",
+    "Other"
+  ],
+  "keywords": [
+    "debugger",
+    "script",
+    "context",
+    "development",
+    "background"
+  ],
+  "bugs": {
+    "url": "https://github.com/IPcorps/VSCContextScript/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IPcorps/VSCContextScript"
+  },
+  "main": "./main.js",
+  "activationEvents": [
+    "*"
+  ],
+  "engines": {
+    "vscode": "^1.55.0"
+  },
+  "contributes": {}
+}
