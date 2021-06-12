@@ -43,6 +43,7 @@ module.exports = {
   "noImplicitReturns": true,                      /* Report error when not all code paths in function return a value. */
   "noFallthroughCasesInSwitch": true,             /* Report errors for fallthrough cases in switch statement. */
   "noUncheckedIndexedAccess": true,               /* Include 'undefined' in index signature results */
+  "noImplicitOverride": true,                     /* Ensure overriding members in derived classes are marked with an 'override' modifier. */
   "noPropertyAccessFromIndexSignature": true,     /* Require undeclared properties from index signatures to use element accesses. */
 
   /* Module Resolution Options */
@@ -64,8 +65,8 @@ module.exports = {
   // "inlineSources": true,                       /* Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. */
 
   /* Experimental Options */
-  // "experimentalDecorators": true,              /* Enables experimental support for ES7 decorators. */
-  // "emitDecoratorMetadata": true,               /* Enables experimental support for emitting type metadata for decorators. */
+  "experimentalDecorators": true,                 /* Enables experimental support for ES7 decorators. */
+  "emitDecoratorMetadata": true,                  /* Enables experimental support for emitting type metadata for decorators. */
 
   /* Advanced Options */
   "skipLibCheck": true,                           /* Skip type checking of declaration files. */

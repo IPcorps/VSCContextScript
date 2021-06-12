@@ -21,7 +21,7 @@ exports.change = path => {
         .on('error', console.log)                                                           // For oops caught a mistake 🙀
         .pipe(gulpif(wdsOpt.middle, dest('.')))                                             // Saving an intermediate file
         .pipe(gulpif(wdsOpt.mini, terser(tersOpt)))                                         // Javascript minifier and ... what else you want
-        .pipe(gulpif(wdsOpt.extjs, gulprename({ extname: wdsOpt.extjs })))                  // Output file extension
+        .pipe(gulpif(!!wdsOpt.extjs, gulprename({ extname: wdsOpt.extjs })))                // Output file extension
         .pipe(gulpif(!!wdsOpt.dirFrom, gulprename(                                          // Checking and setting the path
             dir => dir.dirname = dir.dirname.replace(wdsOpt.dirFrom, wdsOpt.dirTo))))
         .pipe(dest('.'))                                                                    // Saving the file

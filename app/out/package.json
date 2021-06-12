@@ -3,7 +3,7 @@
   "displayName": "VSC Context Script",
   "version": "1.0.0",
   "description": "🌀 Visual Studio Code (VSC) extension for running a script in the context of the VSC itself.",
-  "icon": "128_258.png",
+  "icon": "icon.png",
   "galleryBanner": {
     "color": "#00ffff",
     "theme": "dark"
@@ -12,7 +12,6 @@
   "publisher": "IPcorp",
   "license": "SEE LICENSE IN LICENSE",
   "categories": [
-    "Debuggers",
     "Other"
   ],
   "keywords": [
