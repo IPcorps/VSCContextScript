@@ -16,10 +16,11 @@ let tsProject = ts.createProject(tsOpt);
 exports.change = path => {
 
     // TypeScript processing
-    src(path)                                                                               // Reading the file 
+    const tsRes = src(path)                                                                 // Reading the file 
         .pipe(tsProject())                                                                  // TypeScript -> JavaScript
-        .on('error', console.log)                                                           // For oops caught a mistake 🙀
-        .pipe(gulpif(wdsOpt.middle, dest('.')))                                             // Saving an intermediate file
+        .on('error', console.log);                                                          // For oops caught a mistake 🙀
+
+    tsRes.js.pipe(gulpif(wdsOpt.middle, dest('.')))                                         // Saving an intermediate file
         .pipe(gulpif(wdsOpt.mini, terser(tersOpt)))                                         // Javascript minifier and ... what else you want
         .pipe(gulpif(!!wdsOpt.extjs, gulprename({ extname: wdsOpt.extjs })))                // Output file extension
         .pipe(gulpif(!!wdsOpt.dirFrom, gulprename(                                          // Checking and setting the path
@@ -28,6 +29,9 @@ exports.change = path => {
         .on('end', () => {                                                                  // Updating the debugger
             // console.log('end')
         });
+
+    if (wdsOpt.dts) tsRes.dts.pipe(dest('.'));                                              // Saving the d.ts file
+
 
     // To see something happen
     console.log('\x1b[36m%s\x1b[0m', path, 'processed');
