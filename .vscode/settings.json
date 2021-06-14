@@ -1,16 +1,19 @@
 {
-    "contextScript": [
+    "contextScripts": [
         {
-            "path": "./ctx-scripts/ctx-time.js",
-            "parameters": {},
-            "autorun": true
+            "name": "Hello Context",
+            "path": "./ctx-scripts/HelloContext.js"
         },
         {
-            "path": "./ctx-scripts/ctx-server.js",
+            "name": "Time",
+            "path": "./ctx-scripts/time.js"
+        },
+        {
+            "name": "Server",
+            "path": "./ctx-scripts/server.js",
             "parameters": {
                 "port": 8765
-            },
-            "autorun": false
+            }
         }
     ]
 }

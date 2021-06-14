@@ -1,1 +1,1 @@
-Only fork and [issues](https://github.com/IPcorps/VSCContextScript/issues)!
+Ready for any [suggestions and bug reports](https://github.com/IPcorps/VSCContextScript/issues)!

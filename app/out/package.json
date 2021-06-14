@@ -30,7 +30,7 @@
   },
   "main": "./main.js",
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "engines": {
     "vscode": "^1.55.0"
