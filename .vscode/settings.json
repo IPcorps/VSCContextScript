@@ -5,8 +5,8 @@
             "path": "./ctx-scripts/HelloContext.js"
         },
         {
-            "name": "Time",
-            "path": "./ctx-scripts/time.js"
+            "name": "Clock",
+            "path": "./ctx-scripts/clock.js"
         },
         {
             "name": "Server",
