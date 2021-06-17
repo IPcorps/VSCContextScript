@@ -33,6 +33,6 @@ exports.change = path => {
     if (wdsOpt.dts) tsRes.dts.pipe(dest('.'));                                              // Saving the d.ts file
 
     // To see something happen
-    console.log('\x1b[36m%s\x1b[0m', path, 'processed');
+    console.log('\x1B[90m%s \x1b[36m%s\x1b[0m', new Date().toLocaleTimeString(), path, 'processed');
 
 }
