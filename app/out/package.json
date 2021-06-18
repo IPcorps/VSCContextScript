@@ -5,7 +5,7 @@
   "description": "🌀 Visual Studio Code (VSC) extension for running a script in the context of the VSC itself.",
   "icon": "icon.png",
   "galleryBanner": {
-    "color": "#00ffff",
+    "color": "#0000ff",
     "theme": "dark"
   },
   "author": "Igor Patievich",
