@@ -114,7 +114,10 @@ In the script file, two functions are important to the extension:
 - *activate(params)* - (required) is called when the script is run, with an optional parameter that takes the object of the data passed to the script **parameters** from the settings file.
 - *activate()* - (optional) called when scripts are turned off.
 
-Also, for debugging purposes, the **ctxLog()** extension function is available in the global scope, which takes a string argument and outputs it to the VSContext extension output channel.
+Also, for debugging purposes, the **ctxLog()** extension function is available in the global scope, which takes two arguments:
+
+- *string* - (required) is output to the VSContext channel of the extension output.
+- *boolean* (optional) - if true, each output will start from a new line (by default), if false, it will be without line feed.
 
 # Useful links.
 
