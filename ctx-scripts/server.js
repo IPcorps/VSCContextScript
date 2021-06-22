@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.deactivate = exports.activate = void 0;
 // Importing the "vscode" module, which contains the VS Code extensibility API
 const vscode_1 = __importDefault(require("vscode"));
 // Importing an http module to create a server
@@ -28,11 +29,11 @@ function activate(params) {
     // Start listening for connections.
     server.listen(params.port);
 }
+exports.activate = activate;
 // DEACTIVATION FUNCTION THAT STARTS WHEN THE SCRIPT IS TURNED OFF
 function deactivate() {
     ctxLog("The server is stopped.");
     // Closing the server
     server.close();
 }
-// Export the activation function to be called by extension
-module.exports = { activate, deactivate };
+exports.deactivate = deactivate;

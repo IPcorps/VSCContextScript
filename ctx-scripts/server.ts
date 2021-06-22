@@ -10,7 +10,7 @@ declare function ctxLog(data: string, newline?: boolean): void;
 const server = http.createServer();
 
 // ACTIVATION FUNCTION THAT IS TRIGGERED WHEN THE SCRIPT IS RUN
-function activate(params: { port: number }) {
+export function activate(params: { port: number }) {
     ctxLog("The server is running.");
 
     // Processing the client connection event and receiving the message.
@@ -33,13 +33,10 @@ function activate(params: { port: number }) {
 }
 
 // DEACTIVATION FUNCTION THAT STARTS WHEN THE SCRIPT IS TURNED OFF
-function deactivate() {
+export function deactivate() {
     ctxLog("The server is stopped.");
 
     // Closing the server
     server.close();
 
 }
-
-// Export the activation function to be called by extension
-module.exports = { activate, deactivate }
