@@ -1,6 +1,6 @@
 {
   "name": "vsccontextscript",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🌀 Visual Studio Code (VSC) extension for running a script in the context of the VSC itself.",
   "scripts": {
     "rfw": "gulp watcher"
@@ -8,7 +8,7 @@
   "author": "IPcorp",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^15.12.3",
+    "@types/node": "^15.12.4",
     "@types/vscode": "^1.57.0",
     "gulp": "^4.0.2",
     "gulp-if": "^3.0.0",
