@@ -1,7 +1,7 @@
 {
   "name": "vsccontextscript",
   "displayName": "VSC Context Script",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🌀 Visual Studio Code (VSC) extension for running a script in the context of the VSC itself.",
   "icon": "icon.png",
   "galleryBanner": {

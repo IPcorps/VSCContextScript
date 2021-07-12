@@ -17,7 +17,7 @@ The extension is intended for writing...extensions without...extensions 🤔 Hm.
 
 # Example 1. Traditional **'Hello Context'**.
 
-*Step 1.* In the **folder.vscode**, in the file **setting.json** (if there are no such ones yet, you need to create them), we will write the settings for the script:
+*Step 1.* In the folder **.vscode**, in the file **setting.json** (if there are no such ones yet, you need to create them), we will write the settings for the script:
 
 ```json
 {
@@ -103,7 +103,7 @@ It is possible to get many commands from the VS Code itself:
 
 # The work of the extension.
 
-The extension reads the array **contextScripts** property from the **settings file.json**, each element of which is a **metadata object of a single script**. Then, using their **path**, it connects all the scripts as modules, thereby giving them access to the runtime context of the environment. Each metadata object has the following properties:
+The extension reads the array **contextScripts** property from the **settings.json** file, each element of which is a **metadata object of a single script**. Then, using their **path**, it connects all the scripts as modules, thereby giving them access to the runtime context of the environment. Each metadata object has the following properties:
 
 - *name* - (required) the name of the script (displayed in the error log).
 - *path* - (required) the path where the script is located.
@@ -111,8 +111,8 @@ The extension reads the array **contextScripts** property from the **settings fi
 
 In the script file, two functions are important to the extension:
 
-- *activate(params)* - (required) is called when the script is run, with an optional parameter that takes the object of the data passed to the script **parameters** from the settings file.
-- *activate()* - (optional) called when scripts are turned off.
+- *activate(params) {}* - (required) is called when the script is run, with an optional parameter that takes the object of the data passed to the script **parameters** from the settings file.
+- *deactivate() {}* - (optional) called when scripts are turned off.
 
 Also, for debugging purposes, the **ctxLog()** extension function is available in the global scope, which takes two arguments:
 

@@ -9,7 +9,7 @@
 >---
 >**ПРИМЕЧАНИЕ**
 >
->После установки расширения, в статус-баре, слева, появится его иконка, клик на которую будет запускать/останавливать написанные скрипты.
+>После установки расширения, в статус-баре, слева, появится его иконка, клик на которую будет запускать/останавливать скрипты.
 >
 >![01](https://user-images.githubusercontent.com/5076458/122537531-52228880-d02e-11eb-9025-11fea068124d.jpg)
 >
@@ -71,7 +71,7 @@ module.exports = { activate }
 >
 >---
 
-Шаги остаются те же (на GitHub, в [репозитории данного расширения](https://github.com/IPcorps/VSCContextScript), можно посмотреть как [файл настроек](https://github.com/IPcorps/VSCContextScript/blob/main/.vscode/settings.json), так и [скрипты примеры](https://github.com/IPcorps/VSCContextScript/tree/main/ctx-scripts)). Клик по иконке останавливает/запускает отображение текущего времени:
+Шаги остаются те же (на GitHub, в [репозитории данного расширения](https://github.com/IPcorps/VSCContextScript), можно посмотреть как [файл настроек](https://github.com/IPcorps/VSCContextScript/blob/main/.vscode/settings.json), так и [примеры скриптов](https://github.com/IPcorps/VSCContextScript/tree/main/ctx-scripts)). Клик по иконке останавливает/запускает отображение текущего времени:
 
 ![03](https://user-images.githubusercontent.com/5076458/122543631-a466a800-d034-11eb-99c9-71ff7c111b9a.gif)
 
@@ -109,10 +109,10 @@ module.exports = { activate }
 - *path* - (требуется) путь, по которому расположен скрипт.
 - *parameters* - (необязательно) объект с данными, который будет передан скрипту как параметр.
 
-В файле скрипта расширению важны две функции:
+В файле скрипта расширению важны две функции (не возвращающие результат):
 
-- *activate(params)* - (требуется) вызывается при запуске скрипта, с необязательным параметром, который принимает объект передаваемых данных скрипту **parameters** из файла настроек.
-- *activate()* - (необязательно) вызывается при выключении скриптов. 
+- *activate(params) {}* - (требуется) вызывается при запуске скрипта, с необязательным параметром, который принимает объект передаваемых данных скрипту **parameters** из файла настроек.
+- *deactivate() {}* - (необязательно) вызывается при выключении скриптов. 
 
 Так же, для целей отладки, в глобальной области видимости доступна функция расширения **ctxLog()**, которая принимает два аргумента:
 
@@ -124,4 +124,4 @@ module.exports = { activate }
 [Основной ресурс по написанию расширений VS Code](https://code.visualstudio.com/api). И там, среди прочего:
 
 - [VS Code API]() - Полное API среды разработки.
-- [Built-in Commands](https://code.visualstudio.com/api/references/commands) - еще небольшой перечень команд, доступных к выполнению методом **vscode.commands.executeCommand**
+- [Built-in Commands](https://code.visualstudio.com/api/references/commands) - еще небольшой перечень команд, доступных к выполнению методом **vscode.commands.executeCommand**.
