@@ -15,6 +15,9 @@ let tsProject = ts.createProject(tsOpt);
 
 exports.change = path => {
 
+    // To see something happen
+    console.log("\x1B[90m%s \x1b[36m%s\x1b[0m", new Date().toLocaleTimeString(), path, "start of processing...");
+
     // TypeScript processing
     const tsRes = src(path)                                                                 // Reading the file 
         .pipe(tsProject())                                                                  // TypeScript -> JavaScript
@@ -26,13 +29,11 @@ exports.change = path => {
         .pipe(gulpif(file => file.path.match(/\\app\\/), gulprename(                        // Checking and setting the path
             dir => dir.dirname = dir.dirname.replace(wdsOpt.dirFrom, wdsOpt.dirTo))))
         .pipe(dest('.'))                                                                    // Saving the file
-        .on('end', () => {                                                                  // Updating the debugger
-            // console.log('end')
-        });
+        .on("end", () => console.log("\x1B[90m%s \x1b[36m%s\x1b[0m", new Date().toLocaleTimeString(), path, "ts processing is complete!"));
 
-    if (wdsOpt.dts) tsRes.dts.pipe(dest('.'));                                              // Saving the d.ts file
 
-    // To see something happen
-    console.log('\x1B[90m%s \x1b[36m%s\x1b[0m', new Date().toLocaleTimeString(), path, 'processed');
+    if (wdsOpt.dts)
+        tsRes.dts.pipe(dest('.'))                                                           // Saving the d.ts file
+            .on("end", () => console.log("\x1B[90m%s \x1b[36m%s\x1b[0m", new Date().toLocaleTimeString(), path, "d.ts processing is complete!"));
 
 }
